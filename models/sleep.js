@@ -1,18 +1,26 @@
+
+
 module.exports = (sequelize, DataTypes) => {
     const Sleep = sequelize.define('Sleep', {
-      sleepDuration: {
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      sleep_Duration: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      wakeUpCount: {
+      wakeup_Count: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      heartRate: {
+      heart_Rate: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      heartRateVariability: {
+      heartrate_Variability: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
@@ -24,15 +32,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
-      timeSleeping: {
+      time_Sleeping: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      sleepInterruptions: {
+      sleep_Interruptions: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      bodyTemperature: {
+      body_Temperature: {
         type: DataTypes.FLOAT,
         allowNull: false,
       }

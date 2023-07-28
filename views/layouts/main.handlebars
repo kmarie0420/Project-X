@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project X</title>
+  <link rel="stylesheet" href="/public/jass.css">
+</head>
+
+
+<body>
+  <div class="">
+<header class="">
+ <h1> 
+  <a href="/">Project X</a>
+
+  </h1>
+  <nav>
+      <!--endpoints for client profile  -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+      </header>
+      <main class="">
+        {{{body}}}
+
+      </main>
+      </div>
+</body>
+</html>
