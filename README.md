@@ -34,10 +34,10 @@ Then run npm i at the root of this project in your local directory.
 
 ## Contributors
 
-Raheim Devins
-Kalynn Powell
-Mark Amaro
-Dylan Cummins
+* Raheim Devins
+* Kalynn Powell
+* Mark Amaro
+* Dylan Cummins
 
 ## License
 
@@ -53,10 +53,10 @@ https://github.com/kmarie0420/Project-X
 ## Questions
 
 If you have any questions or concerns, please email:
-Kalynn Powell - kpowell0420@gmail.com or https://github.com/kmarie0420 
-Dylan Cummins - dcummins4167@gmail.com
-Mark Amaro - manthonyamaro@yahoo.com
-Raheim Devins - Raheimdev2011@gmail.com or https://gitHub.com/RaheimDevins 
+   * Kalynn Powell - kpowell0420@gmail.com or [Github](https://github.com/kmarie0420) 
+   * Dylan Cummins - dcummins4167@gmail.com or [Github](https://github.com/MarkAAmaro) 
+   * Mark Amaro - manthonyamaro@yahoo.com or [Github](https://github.com/DylanCummins4167) 
+   * Raheim Devins - Raheimdev2011@gmail.com or [Github](https://gitHub.com/RaheimDevins) 
 
 ## Credits
 
