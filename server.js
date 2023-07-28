@@ -1,6 +1,6 @@
 
 //REquiremnts
-const routes = require('./routes');
+const routes = require('./controllers');
 const express = require('express');
 const sequelize = require('');
 const path = require('path');
