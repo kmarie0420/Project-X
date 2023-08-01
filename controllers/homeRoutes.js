@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const { Sleep } = require('../../models');
-const sleep = require('../../models/sleep');
-// const withAuth = require('../../utils/auth');
+const { Sleep, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 // findAll
 router.get('/', async (req, res) => {

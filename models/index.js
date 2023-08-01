@@ -1,4 +1,12 @@
-const sequelize = require("../config/connection");
-const Sleep = require("./Sleep");
+// const sequelize = require("../config/connection");
+const Sleep = require('./Sleep');
+const User = require('./User')
 
-module.exports = Sleep;
+
+User.hasMany(Sleep, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+
+module.exports = { User, Sleep };
