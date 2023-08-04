@@ -1,25 +1,28 @@
 const router = require('express').Router();
 const { Sleep } = require('../../models');
 const sleep = require('../../models/Sleep.js');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 // findAll
 router.get('/', async (req, res) => {
   try {
-  const sleepData = await Sleep.findAll({
+  const dbsleepData = await Sleep.findAll({
     include: [
       {
-      model: sleep, 
+      model: Sleep, 
       attributes: ['id', 'sleepDuration', 'wakeUpCount', 'heartRate', 'heartRateVariability', 'respiration', 'snoring', 'timeSleeping', 'sleepInterruptions', 'bodyTemperature'],
       }, 
   ],
 });
 
-const sleep = sleepData.map((sleep) => sleep.get({ plain: true }));
+const sleep = dbsleepData.map((sleep) => 
+  sleep.get({ plain: true })
+);
 res.render('homepage', {
   sleep
 });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
   });
@@ -35,15 +38,18 @@ res.render('homepage', {
 //   });
 
 
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const newSleep = await Sleep.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
 
-
-// router.post('/', (req, res) => {})
-
-// .catch(err => {
-//     console.log(err);
-//     res.status().json(err);
-//   });
-
+    res.status(200).json(newSleep);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 
 
@@ -56,24 +62,24 @@ res.render('homepage', {
 
 
 
-//  // delete one product by its `id` value
-//   router.delete('/:id', (req, res) => {
-//     Sleep.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//     .then(dbSleepData => {
-//       if (!dbSleepData) {
-//         res.status(404).json({message: 'No sleep found with this id'});
-//         return;
-//       }
-//       res.json(dbSleepData);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-//   });
+ // delete one product by its `id` value
+  router.delete('/:id', (req, res) => {
+    Sleep.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(dbSleepData => {
+      if (!dbSleepData) {
+        res.status(404).json({message: 'No sleep found with this id'});
+        return;
+      }
+      res.json(dbSleepData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  });
 
 module.exports = router;
