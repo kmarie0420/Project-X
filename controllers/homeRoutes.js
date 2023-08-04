@@ -7,9 +7,9 @@ router.get('/', async (req, res) => {
     const sleepData = await Sleep.findAll({
       include: [
         {
-          model: Sleep, 
+          model: Sleep,
           attributes: ['id', 'sleepDuration', 'wakeUpCount', 'heartRate', 'heartRateVariability', 'respiration', 'snoring', 'timeSleeping', 'sleepInterruptions', 'bodyTemperature'],
-        }, 
+        },
       ],
     });
 
@@ -31,7 +31,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/signup', (req, res) => { 
+router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
