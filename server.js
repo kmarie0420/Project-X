@@ -1,8 +1,6 @@
-
 //REquiremnts
-const routes = require('./controllers');
+var routes = require('./controllers');
 const express = require('express');
-// const sequelize = require('');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
@@ -18,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: "Super secret secret",
   cookie: {
     maxAge: 300000,
     httpOnly: true,
@@ -28,30 +26,26 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
 
-
-
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 app.use(routes);
 
+// app.get("/", (req, res) => {
+//   //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+//   res.render("main", { layout: "index" });
+// });
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log("Now listening"));
 });

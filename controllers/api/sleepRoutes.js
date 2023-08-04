@@ -10,7 +10,9 @@ router.get('/', async (req, res) => {
     include: [
       {
       model: Sleep, 
-      attributes: ['id', 'sleepDuration', 'wakeUpCount', 'heartRate', 'heartRateVariability', 'respiration', 'snoring', 'timeSleeping', 'sleepInterruptions', 'bodyTemperature'],
+      attributes: ['id', 'sleepDuration', 
+      // 'wakeUpCount', 'heartRate', 'heartRateVariability', 'respiration', 'snoring', 'timeSleeping', 'sleepInterruptions', 'bodyTemperature'
+    ],
       }, 
   ],
 });
