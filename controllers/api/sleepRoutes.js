@@ -3,41 +3,67 @@ const { Sleep } = require('../../models');
 const sleep = require('../../models/Sleep.js');
 const withAuth = require('../../utils/auth');
 
-// findAll
-router.get('/', async (req, res) => {
-  try {
-  const dbsleepData = await Sleep.findAll({
+
+// get all posts
+router.get('/', (req, res) => {
+  Sleep.findAll({
+    attributes: ['id', 'sleep_duration'],
     include: [
       {
-      model: Sleep, 
-      attributes: ['id', 'sleepDuration', 
-      // 'wakeUpCount', 'heartRate', 'heartRateVariability', 'respiration', 'snoring', 'timeSleeping', 'sleepInterruptions', 'bodyTemperature'
-    ],
-      }, 
-  ],
+        model: User,
+        attributes: ['username']
+      },
+    ]
+  })
+  .then(dbSleepData => res.json(dbSleepData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
-const sleep = dbsleepData.map((sleep) => 
-  sleep.get({ plain: true })
-);
-res.render('homepage', {
-  sleep
-});
+// // findAll
+// router.get('/', async (req, res) => {
+//   try {
+//   const dbsleepData = await Sleep.findAll({
+//     include: [
+//       {
+//       model: Sleep, 
+//       attributes: ['id', 'sleepDuration', 
+//       // 'wakeUpCount', 'heartRate', 'heartRateVariability', 'respiration', 'snoring', 'timeSleeping', 'sleepInterruptions', 'bodyTemperature'
+//     ],
+//       }, 
+//   ],
+// });
+
+// const sleep = dbsleepData.map((sleep) => 
+//   sleep.get({ plain: true })
+// );
+// res.render('homepage', {
+//   sleep
+// });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+//   });
+
+
+
+
+// GET one sleep
+router.get('/sleep/:id', async (req, res) => {
+  try {
+    const dbSleepData = await Sleep.findByPk(req.params.id);
+
+    const sleep = dbSleepData.get({ plain: true });
+
+    res.render('sleep', { sleep });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
-  });
-
-
-
-// // findOne
-// router.get('/:id', (req, res) => {})
-
-// .catch(err => {
-//     console.log(err);
-//     res.status().json(err);
-//   });
+});
 
 
 router.post('/', withAuth, async (req, res) => {
