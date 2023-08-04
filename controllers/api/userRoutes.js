@@ -4,12 +4,13 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
-      name: req.body.username,
+      name: req.body.name,
       password: req.body.password,
     });
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.name = dbUserData.name;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -22,7 +23,7 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        name: req.body.username,
+        name: req.body.name,
       },
     });
 
@@ -44,6 +45,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.name = dbUserData.name;
       res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
     });
   } catch (err) {

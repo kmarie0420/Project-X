@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     const sleep = sleepData.map((sleep) => sleep.get({ plain: true }));
     res.render('homepage', {
       sleep,
-      logged_in: req.session.logged_in
+      logged_in: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
@@ -34,5 +34,12 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
+
+
+router.get('/profile', withAuth, (req, res) => {
+  res.render('profile', {name: req.session.name});
+});
+
+
 
 module.exports = router;
