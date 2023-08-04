@@ -1,6 +1,7 @@
-//REquiremnts
-var routes = require('./controllers');
+
+const routes = require('./controllers');
 const express = require('express');
+
 const path = require('path');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
@@ -12,7 +13,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//Handlebars
+
 const hbs = exphbs.create({ helpers });
 
 const sess = {

@@ -12,12 +12,12 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // for (const sleep of sleepData) {
-  // await Sleep.create({
-  // ...sleep,
-  //  user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
+ // for (const sleep of sleepData) {
+  //await Sleep.create({
+ // ...sleep,
+   //user_id: users[Math.floor(Math.random() * users.length)].id,
+   // });
+  //}
 
   process.exit(0);
 };
