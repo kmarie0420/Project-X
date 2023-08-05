@@ -83,3 +83,27 @@ footer {
     width: 100%;
 }
 
+.sleep-themed-bg {
+    background-image: url('/path/to/your/background/image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Arial', sans-serif; /* This is just an example, consider using a soft, rounded font */
+}
+
+h2 {
+    color: #6b8ba4; /* Muted blue */
+    margin-bottom: 20px;
+}
+
+.btn {
+    border-radius: 25px; /* Rounded buttons */
+}
+
+.btn-primary {
+    background-color: #5c7a96; /* Muted blue */
+}
+
+.btn-secondary {
+    background-color: #ada2b8; /* Muted purple */
+}

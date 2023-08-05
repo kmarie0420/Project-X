@@ -42,6 +42,8 @@ document
   .querySelector('.new-sleep-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.sleep-list')
-  .addEventListener('click', delButtonHandler);
+//document
+ // .querySelector('.sleep-list')
+  //.addEventListener('click', delButtonHandler);
+
+  

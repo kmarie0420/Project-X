@@ -1,4 +1,4 @@
-// const sequelize = require("../config/connection");
+
 const Sleep = require('./Sleep');
 const User = require('./User')
 
