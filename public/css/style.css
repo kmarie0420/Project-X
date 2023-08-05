@@ -83,27 +83,46 @@ footer {
     width: 100%;
 }
 
-.sleep-themed-bg {
-    background-image: url('/path/to/your/background/image.jpg');
+.homepage-bg {
+    background-image: url('https://www.sleepcycle.com/wp-content/uploads/2021/11/track-sleep-1-1920x1270.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-    font-family: 'Arial', sans-serif; /* This is just an example, consider using a soft, rounded font */
+    font-family: 'Arial', sans-serif;
+    position: relative; 
 }
+
+.homepage-bg::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    z-index: 1; 
+}
+
 
 h2 {
-    color: #6b8ba4; /* Muted blue */
+    color: #1b89bc; 
     margin-bottom: 20px;
+    z-index: 2; 
 }
 
-.btn {
-    border-radius: 25px; /* Rounded buttons */
+p {
+    color: #333; 
+    z-index: 2; 
 }
 
 .btn-primary {
-    background-color: #5c7a96; /* Muted blue */
+    background-color: #1b89bc; 
+    z-index: 2; 
 }
 
 .btn-secondary {
-    background-color: #ada2b8; /* Muted purple */
+    background-color: #065b83;
+    color: #fff; 
+    z-index: 2; 
 }
