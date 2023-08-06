@@ -1,14 +1,13 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#sleep').value.trim();
-  const needed_funding = document.querySelector('#sleep-funding').value.trim();
-  const description = document.querySelector('#sleep-desc').value.trim();
+  const name = document.querySelector('#project-name').value.trim();
+  const description = document.querySelector('#project-desc').value.trim();
 
-  if (name && needed_funding && description) {
+  if (name && description) {
     const response = await fetch(`/api/sleep`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -42,8 +41,6 @@ document
   .querySelector('.new-sleep-form')
   .addEventListener('submit', newFormHandler);
 
-//document
- // .querySelector('.sleep-list')
-  //.addEventListener('click', delButtonHandler);
 
-  
+//  .querySelector('.sleep-list')
+//  .addEventListener('click', delButtonHandler);
