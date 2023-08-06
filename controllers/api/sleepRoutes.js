@@ -3,10 +3,13 @@ const { Sleep } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const dbsleepData = await Sleep.findAll({
-      attributes: ['id', 'sleep_Duration', 'wakeup_Count', 'heart_Rate', 'heartrate_Variability', 'respiration', 'snoring', 'time_Sleeping', 'sleep_Interruptions', 'body_Temperature']
+      where: {
+        user_id: req.session.user_id 
+      },
+      attributes: ['id', 'name', 'sleep_Duration', 'wakeup_Count', 'heart_Rate', 'heartrate_Variability', 'respiration', 'snoring', 'time_Sleeping', 'sleep_Interruptions', 'body_Temperature']
     });
 
     const sleep = dbsleepData.map((sleep) => sleep.get({ plain: true }));

@@ -42,5 +42,38 @@ document
   .querySelector('.new-sleep-form')
   .addEventListener('submit', newFormHandler);
 
+  async function renderChart() {
+    const response = await fetch('/api/sleep'); 
+    const sleepData = await response.json();
 
+    const labels = sleepData.map(entry => entry.name);  
+    const heartRates = sleepData.map(entry => entry.heart_Rate); 
+
+    const ctx = document.getElementById('sleepChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Heart Rate',
+                data: heartRates,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+                borderColor: 'rgba(75, 192, 192, 1)', 
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  renderChart();
+});
 

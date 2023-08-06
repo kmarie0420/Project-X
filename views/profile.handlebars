@@ -64,6 +64,11 @@
   </div>
 </form>
 
+<div class="col-md-6 mt-4">
+    <h3>Your Sleep Data Chart</h3>
+    <canvas id="sleepChart" width="400" height="200"></canvas>
+</div>
+
   {{#if sleep.length}}
   <div class="col-md-6">
     {{#each Sleep as |Sleep| }}
