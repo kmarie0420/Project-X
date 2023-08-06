@@ -6,7 +6,7 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Set up your sleep tracking information</h3>
 
     <form class="form new-sleep-form">
       <div class="form-group">
@@ -26,26 +26,20 @@
 
   {{#if sleep.length}}
   <div class="col-md-6">
-    
-
-   
-{{#each Sleep as |Sleep| }}
-
-
-<h2>
-<a href="/sleep/{{Sleep.id}}">{{Sleep...}}</a>
-</h2>
-
-<p>
-<span class="sleep-list">
-sleep duration:{{Sleep.sleep_Duration}}
-wakeup count:{{Sleep.wakeup_Count}}
-heart rate:{{Sleep.heart_Rate}}
-snoring:{{Sleep.snoring}}
-time sleeping:{{Sleep.time_Sleeping}}
-</span>
-</p>
-{{/each}}
+    {{#each Sleep as |Sleep| }}
+      <h2>
+        <a href="/sleep/{{Sleep.id}}">{{Sleep.name}}</a>
+      </h2>
+      <p>
+        <span class="sleep-list">
+          sleep duration:{{Sleep.sleep_Duration}}
+          wakeup count:{{Sleep.wakeup_Count}}
+          heart rate:{{Sleep.heart_Rate}}
+          snoring:{{Sleep.snoring}}
+          time sleeping:{{Sleep.time_Sleeping}}
+        </span>
+      </p>
+    {{/each}}
   </div>
   {{/if}}
 </div>
