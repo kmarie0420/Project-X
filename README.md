@@ -3,9 +3,9 @@ Project X
 
 ## User Story
 
-AS A
-I WANT
-SO THAT
+AS A individual that struggles with sleep issues
+I WANT to be able to input and track sleep data 
+SO THAT I can keep track of my sleeping patterns
 
 ## Acceptance Criteria
 
@@ -15,6 +15,7 @@ THEN
 
 ## Description
 
+A node.js application that takes in user input to store sleep data. When the note is generated, it is saved and stored in a library. With the option to update or delete for future use. 
 
 ## Installation
 
@@ -31,6 +32,7 @@ Then run npm i at the root of this project in your local directory.
 
 ## Usage Information
 
+To run this application, use the command line to navigate to the directory of the application, install all dependencies (npm i), then type the command `npm run start`. You will then get a prompt saying `API server now on port 3001.` Once you navigate to the port on your UI, you can either login in or sign up. Once logged in, you can input user data that will be stored in your local storage. With the ability to delete current data as well.
 
 ## Contributors
 
@@ -68,3 +70,4 @@ https://www.npmjs.com/package/bcrypt
 https://www.npmjs.com/package/express-handlebars 
 https://www.npmjs.com/package/server.js
 https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba 
+https://devcenter.heroku.com/categories/reference 
