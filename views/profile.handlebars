@@ -8,21 +8,61 @@
   <div class="col-md-6">
     <h3>Set up your sleep tracking information</h3>
 
-    <form class="form new-sleep-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+   <form class="form new-sleep-form">
+  <div class="form-group">
+    <label for="project-name">Sleep Entry Name:</label>
+    <input class="form-input" type="text" id="project-name" name="project-name" />
   </div>
+  
+  <div class="form-group">
+    <label for="sleep-duration">Sleep Duration (in minutes):</label>
+    <input class="form-input" type="number" id="sleep-duration" name="sleep-duration" />
+  </div>
+  
+  <div class="form-group">
+    <label for="wakeup-count">Wakeup Count:</label>
+    <input class="form-input" type="number" id="wakeup-count" name="wakeup-count" />
+  </div>
+
+  <div class="form-group">
+    <label for="heart-rate">Heart Rate:</label>
+    <input class="form-input" type="number" id="heart-rate" name="heart-rate" />
+  </div>
+
+  <div class="form-group">
+    <label for="heartrate-variability">Heart Rate Variability:</label>
+    <input class="form-input" type="number" id="heartrate-variability" name="heartrate-variability" />
+  </div>
+
+  <div class="form-group">
+    <label for="respiration">Respiration:</label>
+    <input class="form-input" type="number" id="respiration" name="respiration" />
+  </div>
+
+  <div class="form-group">
+    <label for="snoring">Snoring:</label>
+    <input class="form-input" type="checkbox" id="snoring" name="snoring" />
+  </div>
+
+  <div class="form-group">
+    <label for="time-sleeping">Time Sleeping (in minutes):</label>
+    <input class="form-input" type="number" id="time-sleeping" name="time-sleeping" />
+  </div>
+
+  <div class="form-group">
+    <label for="sleep-interruptions">Sleep Interruptions:</label>
+    <input class="form-input" type="number" id="sleep-interruptions" name="sleep-interruptions" />
+  </div>
+
+  <div class="form-group">
+    <label for="body-temperature">Body Temperature:</label>
+    <input class="form-input" type="number" step="0.01" id="body-temperature" name="body-temperature" />
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Create Sleep Entry</button>
+  </div>
+</form>
 
   {{#if sleep.length}}
   <div class="col-md-6">
@@ -45,4 +85,3 @@
 </div>
 
 <script src="./js/profile.js"></script>
-

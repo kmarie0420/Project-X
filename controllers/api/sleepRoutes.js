@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Sleep } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// findAll
+
 router.get('/', async (req, res) => {
   try {
     const dbsleepData = await Sleep.findAll({
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     });
 
     const sleep = dbsleepData.map((sleep) => sleep.get({ plain: true }));
-    // Removed the homepage rendering, as it's being handled in homeRoutes.js
+    
     res.json(sleep);
     
   } catch (err) {
