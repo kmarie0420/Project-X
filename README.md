@@ -3,9 +3,9 @@ Project X
 
 ## User Story
 
-AS A
-I WANT
-SO THAT
+AS A individual that struggles with sleep issues
+I WANT to be able to input and track sleep data 
+SO THAT I can keep track of my sleeping patterns
 
 ## Acceptance Criteria
 
@@ -70,3 +70,4 @@ https://www.npmjs.com/package/bcrypt
 https://www.npmjs.com/package/express-handlebars 
 https://www.npmjs.com/package/server.js
 https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba 
+https://devcenter.heroku.com/categories/reference 
