@@ -46,6 +46,11 @@ Then run npm i at the root of this project in your local directory.
 
 To run this application, use the command line to navigate to the directory of the application, install all dependencies (npm i), then source your database on mysql. Once its sourced, `exit` mysql. `npm run seed` also run `npm run start`. You will then get a prompt saying `API server now on port 3001.` Once you navigate to the port on your UI, you can either login in or sign up. Once logged in, you can input user data that will be stored in your local storage. With the ability to delete current data as well.
 
+## Screenshots
+
+![Alt text](screenshots/2023-08-07.png)
+![Alt text](<screenshots/2023-08-07 (1).png>)
+
 ## Contributors
 
 * Raheim Devins
@@ -87,3 +92,4 @@ https://stackoverflow.com/questions/62169412/express-routes-stopped-working-afte
 https://stackoverflow.com/questions/38757728/using-an-enviroment-variable-for-local-sequelize-configuration
 https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
 https://stackoverflow.com/questions/19341975/heroku-node-cannot-find-module-error 
+https://devcenter.heroku.com/articles/jawsdb#server-metrics

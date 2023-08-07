@@ -1,15 +1,13 @@
-
-const Sleep = require('./Sleep');
-const User = require('./User')
-
+const Sleep = require("./Sleep");
+const User = require("./User");
 
 User.hasMany(Sleep, {
-  foreignKey: 'userId',
-  onDelete: 'CASCADE'
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
 Sleep.belongsTo(User, {
-  foreignKey: 'sleep'
-})
+  foreignKey: "user_id",
+});
 
 module.exports = { User, Sleep };
