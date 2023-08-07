@@ -12,6 +12,9 @@ const newFormHandler = async (event) => {
   const sleep_Interruptions = parseInt(document.querySelector('#sleep-interruptions').value.trim());
   const body_Temperature = parseFloat(document.querySelector('#body-temperature').value.trim());
 
+  if (name && sleep_Duration && wakeup_Count && heart_Rate && heartrate_Variability
+  && respiration && snoring && time_Sleeping && sleep_Interruptions
+  && body_Temperature) {
   const response = await fetch(`/api/sleep`, {
     method: 'POST',
     body: JSON.stringify({
@@ -36,7 +39,7 @@ const newFormHandler = async (event) => {
   } else {
     alert('Failed to create sleep entry');
   }
-};
+}};
 
 document
   .querySelector('.new-sleep-form')
