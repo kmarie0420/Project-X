@@ -8,5 +8,8 @@ User.hasMany(Sleep, {
   onDelete: 'CASCADE'
 });
 
+Sleep.belongsTo(User, {
+  foreignKey: 'sleep'
+})
 
 module.exports = { User, Sleep };
