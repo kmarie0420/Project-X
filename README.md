@@ -9,9 +9,10 @@ SO THAT I can keep track of my sleeping patterns
 
 ## Acceptance Criteria
 
-GIVEN
-WHEN
-THEN
+GIVEN a sleep application
+WHEN I open the Sleep Tracker
+THEN I am presented with a landing page
+When I 
 
 ## Description
 

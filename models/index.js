@@ -4,7 +4,7 @@ const User = require('./User')
 
 
 User.hasMany(Sleep, {
-  foreignKey: 'user_id',
+  foreignKey: 'userId',
   onDelete: 'CASCADE'
 });
 

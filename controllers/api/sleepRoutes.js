@@ -7,10 +7,11 @@ router.get('/', withAuth, async (req, res) => {
   try {
     const dbsleepData = await Sleep.findAll({
       where: {
-        user_id: req.session.user_id 
+        userId: req.session.userId 
       },
       attributes: ['id', 'name', 'sleep_Duration', 'wakeup_Count', 'heart_Rate', 'heartrate_Variability', 'respiration', 'snoring', 'time_Sleeping', 'sleep_Interruptions', 'body_Temperature']
-    });
+    })
+    console.log("______________DATA_____________", req.session)
 
     const sleep = dbsleepData.map((sleep) => sleep.get({ plain: true }));
     
@@ -26,8 +27,9 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newSleep = await Sleep.create({
       ...req.body,
-      user_id: req.session.user_id,
+      userId: req.session.userId,
     });
+    console.log("________________DATA________________")
 
     res.status(200).json(newSleep);
   } catch (err) {
