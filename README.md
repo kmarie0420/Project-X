@@ -67,7 +67,7 @@ To run this application, use the command line to navigate to the directory of th
 https://github.com/kmarie0420/Project-X 
 
 ## Walk-Through Video
-
+https://youtu.be/5eiVdnbhBI8
 
 ## Questions
 
